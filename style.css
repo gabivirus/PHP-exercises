@@ -1,0 +1,39 @@
+body{
+    background-color: #fbfbfb;
+    padding: 3%;
+}
+
+kbd{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    column-gap: 2rem;
+    row-gap: 2rem;
+    align-items: center;
+    flex-direction: row;
+}
+
+a{
+    position: relative;
+    text-decoration: none;
+    color: #303030;
+}
+
+article{
+    min-height: 400;
+    width: 20vw;
+    padding: 20px;
+    background-color: #fff;
+
+    align-items: center;
+
+    border-radius: 10px;
+    border: 1px solid #989898;
+    box-shadow: 10px 10px 10px 0px #989898;
+
+    transition: all .5s ease-in-out;
+}
+
+article:hover{
+    transform: scale(1.1);
+}
