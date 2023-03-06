@@ -1,4 +1,5 @@
 body{
+    width: 100vw;
     background-color: #fbfbfb;
     padding: 3%;
 }
@@ -7,9 +8,9 @@ kbd{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: flex-start;
     column-gap: 2rem;
     row-gap: 2rem;
-    align-items: center;
     flex-direction: row;
 }
 
@@ -20,20 +21,30 @@ a{
 }
 
 article{
+    display: flex;
+    flex-wrap: wrap;
     min-height: 400;
     width: 20vw;
     padding: 20px;
+    
     background-color: #fff;
-
-    align-items: center;
-
     border-radius: 10px;
     border: 1px solid #989898;
     box-shadow: 10px 10px 10px 0px #989898;
 
-    transition: all .5s ease-in-out;
+    transition: all .5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+article h3{
+    flex-wrap: wrap;
 }
 
 article:hover{
     transform: scale(1.1);
+}
+
+@media (max-widt: 750px) {
+    article{
+        width: 40vw;
+    }
 }

@@ -1,51 +1,33 @@
 <html>
 <head>
-	<title>Dicas de PHP</title>
+	<title>Notas</title>
 	<meta charset="utf-8">
 </head>
 <body>
-<kbd>
-<?php
-	
-	echo "<a href='idade.php'>1) Maior de idade</a>";
-	echo "<br>";echo "<br>";
+	<kbd>
+		<h2>Notas</h2>
+		<form method="post">
+			<label for="nota">Informe uma nota:</label>
+			<input type="text" name="nota">
+			<br>
 
-	echo "<a href='mes.php'>2) Mêses</a>";
-	echo "<br>";echo "<br>";
+			<input type="submit" value="Analisar">
+			<br><br><br>
 
-	echo "<a href='nota.php'>3) Notas</a>";
-	echo "<br>";echo "<br>";
+		</form>
 
-	echo "<a href='cascata.php'>4) Números de 1 à 20</a>";
-	echo "<br>";echo "<br>";
+	<?php
 
-	echo "<a href='pares.php'>5) Pares de 1 a 50</a>";
-	echo "<br>";echo "<br>";
+	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-	echo "<a href='entre.php'>6) Números entre</a>";
-	echo "<br>";echo "<br>";
+		$nota = intval($_POST['nota']);
 
-	echo "<a href='cem.php'>7) 100 vezes PHP</a>";
-	echo "<br>";echo "<br>";
-
-	echo "<a href='sorteio.php'>8) Acerte o número</a>";
-	echo "<br>";echo "<br>";
-
-	echo "<a href='positivo.php'>9) Detecção de valores</a>";
-	echo "<br>";echo "<br>";
-	
-	echo "<a href='parimpar.php'>10) Par ou ímpar</a>";
-	echo "<br>";echo "<br>";
-
-	echo "<a href='maior.php'>11) Maior ou menor</a>";
-	echo "<br>";echo "<br>";
-
-	echo "<a href='triangulo.php'>12) Triangulos</a>";
-	echo "<br>";echo "<br>";
-
-	echo "<a href='jokenpo.php'>13) Jokenô</a>";
-	echo "<br>";echo "<br>";
-?>
+		if ($nota >= 0 && $nota <= 5) { echo 'Credo'; }
+		else if ($nota >= 6 && $nota <= 10) { echo 'Parabéns'; }
+		else{ echo $nota, ' é uma nota invalida, digite novamente.'; }
+		
+	}
+	?>
 </kbd>
 </body>
 </html>

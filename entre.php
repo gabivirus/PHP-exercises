@@ -1,51 +1,39 @@
 <html>
 <head>
-	<title>Dicas de PHP</title>
+	<title>Pares</title>
 	<meta charset="utf-8">
 </head>
 <body>
-<kbd>
-<?php
-	
-	echo "<a href='idade.php'>1) Maior de idade</a>";
-	echo "<br>";echo "<br>";
+	<kbd>
+		<h2>Pares de 2 a 50</h2>
+		<article>
+			<form method="post">
+				<label for="num1">num1:</label>
+				<input type="text" name="num1">
+				<br>
 
-	echo "<a href='mes.php'>2) Mêses</a>";
-	echo "<br>";echo "<br>";
+				<label for="num2">num2:</label>
+				<input type="text" name="num2">
+				<br>
 
-	echo "<a href='nota.php'>3) Notas</a>";
-	echo "<br>";echo "<br>";
+				<input type="submit" value="Imprimir">
+				<br>
+			</form>
+			
+			<?php
 
-	echo "<a href='cascata.php'>4) Números de 1 à 20</a>";
-	echo "<br>";echo "<br>";
+			if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-	echo "<a href='pares.php'>5) Pares de 1 a 50</a>";
-	echo "<br>";echo "<br>";
-
-	echo "<a href='entre.php'>6) Números entre</a>";
-	echo "<br>";echo "<br>";
-
-	echo "<a href='cem.php'>7) 100 vezes PHP</a>";
-	echo "<br>";echo "<br>";
-
-	echo "<a href='sorteio.php'>8) Acerte o número</a>";
-	echo "<br>";echo "<br>";
-
-	echo "<a href='positivo.php'>9) Detecção de valores</a>";
-	echo "<br>";echo "<br>";
-	
-	echo "<a href='parimpar.php'>10) Par ou ímpar</a>";
-	echo "<br>";echo "<br>";
-
-	echo "<a href='maior.php'>11) Maior ou menor</a>";
-	echo "<br>";echo "<br>";
-
-	echo "<a href='triangulo.php'>12) Triangulos</a>";
-	echo "<br>";echo "<br>";
-
-	echo "<a href='jokenpo.php'>13) Jokenô</a>";
-	echo "<br>";echo "<br>";
-?>
-</kbd>
+				echo '<h3>';
+				for( $c = $_POST['num1']+1; $c < $_POST['num2']; $c++)
+				{
+					echo $c, '&nbsp';
+					
+				}
+				echo '</h3>';
+			}
+			?>
+		</article>
+	</kbd>
 </body>
 </html>
