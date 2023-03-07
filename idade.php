@@ -38,6 +38,7 @@
 		echo "$name tem $age anos. É ", agefy($age);
 	}
 	?>
+	<button><a href="index.php">Sair</a></button>
 </kbd>
 </body>
 </html>

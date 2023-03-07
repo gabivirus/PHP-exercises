@@ -42,5 +42,6 @@
             jokenpo($Jogador, $computador);
         }
 	?>
+	<button><a href="index.php">Sair</a></button>
 </body>
 </html>

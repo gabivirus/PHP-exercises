@@ -27,6 +27,7 @@
 		else { echo 'Os números são iguais'; }
 	}
 	?>
+	<button><a href="index.php">Sair</a></button>
 </kbd>
 </body>
 </html>
