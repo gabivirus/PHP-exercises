@@ -3,49 +3,6 @@
 	<title>Home</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="style.css">
-	<style>
-		body{
-			background-color: #fbfbfb;
-			padding: 3%;
-		}
-
-		kbd{
-			display: flex;
-			flex-wrap: wrap;
-			flex-grow: 3;
-			justify-content: space-around;
-			column-gap: 2rem;
-			row-gap: 2rem;
-			align-items: flex-start;
-			flex-direction: row;
-		}
-
-		a{
-			position: relative;
-			text-decoration: none;
-			color: #303030;
-		}
-
-		article{
-			min-height: 400;
-			min-width: 250px;
-			padding: 20px;
-			background-color: #fff;
-
-			align-items: center;
-			
-			border-radius: 10px;
-			border: 1px solid #989898;
-			box-shadow: 10px 10px 10px 0px #cbcbcb;
-			
-			transition: all .5s cubic-bezier(0.68, -0.55, 0.27, 1.55);;
-		}
-
-		article:hover{
-			transform: scale(1.1);
-		}
-
-	</style>
 </head>
 <body>
 	<kbd>
@@ -173,7 +130,7 @@
 
 			echo "<a href='jokenpo.php'>";
 				echo '<article>';
-					echo "<h3>13) Jokenô</h3>";
+					echo "<h3>13) Jokenpô</h3>";
 					echo '<hr/>';
 					echo '<p>';
 						echo 'Desenvolva uma aplicação em PHP que represente o jogo Jokenpô (Pedra, Papel e Tesoura), onde o usuário informa seu nome e indica em qual opção quer apostar (pedra, papel ou tesoura) e aguarda a jogada do computador (ela deverá ser automática), de acordo com as regras do Jokenpô exiba quem ganhou e as imagens referentes as escolhas do computador e o usuário. ';
@@ -182,31 +139,5 @@
 			echo "</a>";
 		?>
 	</kbd>
-</body>
-</html>
-
-<html>
-<head>
-	<title>100</title>
-	<meta charset="utf-8">
-</head>
-<body>
-	<kbd>
-		<h2>100 vezes PHP</h2>
-		<form method="post">
-			<label for="btn">Clique</label>
-			<input type="submit" name="btn" value="Imprimir">
-			<br><br>
-		</form>
-
-	<?php
-
-	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-		for($c=1; $c<101; $c++){echo '<h4>', $c, '. PHP';}
-		
-	}
-	?>
-</kbd>
 </body>
 </html>
