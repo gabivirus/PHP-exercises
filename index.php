@@ -3,13 +3,48 @@
 	<title>Home</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="style.css">
+	<script>
+		function map(val, minA, maxA, minB, maxB) {
+    return minB + ((val - minA) * (maxB - minB)) / (maxA - minA);
+  }
+  
+  function Card3D(card, ev) {
+    let img = card.querySelector('img');
+    let imgRect = card.getBoundingClientRect();
+    let width = imgRect.width;
+    let height = imgRect.height;
+    let mouseX = ev.offsetX;
+    let mouseY = ev.offsetY;
+    let rotateY = map(mouseX, 0, 180, -25, 25);
+    let rotateX = map(mouseY, 0, 250, 25, -25);
+    let brightness = map(mouseY, 0, 250, 1.5, 0.5);
+    
+    img.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    img.style.filter = `brightness(${brightness})`;
+  }
+  
+  var cards = document.querySelectorAll('.card3d');
+  
+  cards.forEach((card) => {
+    card.addEventListener('mousemove', (ev) => {
+      Card3D(card, ev);
+    });
+    
+    card.addEventListener('mouseleave', (ev) => {
+      let img = card.querySelector('img');
+      
+      img.style.transform = 'rotateX(0deg) rotateY(0deg)';
+      img.style.filter = 'brightness(1)';
+    });
+  });
+	</script>
 </head>
 <body>
 	<kbd>
 		<?php
 			
 			echo "<a href='idade.php'>";
-				echo '<article>';
+				echo '<article class="card3d">';
 					echo "<h3>1) Maior de idade</h3>";
 					echo '<hr/>';
 					echo '<p>';
@@ -19,7 +54,7 @@
 			echo "</a>";
 
 			echo "<a href='mes.php'>";
-				echo '<article>';
+				echo '<article class="card3d">';
 					echo "<h3>2) Mêses</h3>";
 					echo '<hr/>';
 					echo '<p>';
@@ -29,7 +64,7 @@
 				echo "</a>";
 
 			echo "<a href='nota.php'>";
-				echo '<article>';
+				echo '<article class="card3d">';
 					echo "<h3>3) Notas</h3>";
 					echo '<hr/>';
 					echo '<p>';
@@ -39,7 +74,7 @@
 			echo "</a>";
 
 			echo "<a href='cascata.php'>";
-				echo '<article>';
+				echo '<article class="card3d">';
 					echo "<h3>4) Números de 1 à 20</h3>";
 					echo '<hr/>';
 					echo '<p>';
@@ -49,7 +84,7 @@
 			echo "</a>";
 
 			echo "<a href='pares.php'>";
-				echo '<article>';
+				echo '<article class="card3d">';
 					echo "<h3>5) Pares de 1 a 50</h3>";
 					echo '<hr/>';
 					echo '<p>';
@@ -59,7 +94,7 @@
 			echo "</a>";
 
 			echo "<a href='entre.php'>";
-				echo '<article>';
+				echo '<article class="card3d">';
 					echo "<h3>6) Números entre</h3>";
 					echo '<hr/>';
 					echo '<p>';
@@ -69,7 +104,7 @@
 			echo "</a>";
 
 			echo "<a href='cem.php'>";
-				echo '<article>';
+				echo '<article class="card3d">';
 					echo "<h3>7) 100 vezes PHP</h3>";
 					echo '<hr/>';
 					echo '<p>';
@@ -79,7 +114,7 @@
 			echo "</a>";
 
 			echo "<a href='sorteio.php'>";
-				echo '<article>';
+				echo '<article class="card3d">';
 					echo "<h3>8) Acerte o número</h3>";
 					echo '<hr/>';
 					echo '<p>';
@@ -89,7 +124,7 @@
 			echo "</a>";
 
 			echo "<a href='positivo.php'>";
-				echo '<article>';
+				echo '<article class="card3d">';
 					echo "<h3>9) Detecção de valores</h3>";
 					echo '<hr/>';
 					echo '<p>';
@@ -99,7 +134,7 @@
 			echo "</a>";
 			
 			echo "<a href='parimpar.php'>";
-				echo '<article>';
+				echo '<article class="card3d">';
 					echo "<h3>10) Par ou ímpar</h3>";
 					echo '<hr/>';
 					echo '<p>';
@@ -109,7 +144,7 @@
 			echo "</a>";
 
 			echo "<a href='maior.php'>";
-				echo '<article>';
+				echo '<article class="card3d">';
 					echo "<h3>11) Maior ou menor</h3>";
 					echo '<hr/>';
 					echo '<p>';
@@ -119,7 +154,7 @@
 			echo "</a>";
 
 			echo "<a href='triangulo.php'>";
-				echo '<article>';
+				echo '<article class="card3d">';
 					echo "<h3>12) Triangulos</h3>";
 					echo '<hr/>';
 					echo '<p>';
@@ -129,7 +164,7 @@
 			echo "</a>";
 
 			echo "<a href='jokenpo.php'>";
-				echo '<article>';
+				echo '<article class="card3d">';
 					echo "<h3>13) Jokenpô</h3>";
 					echo '<hr/>';
 					echo '<p>';
