@@ -1,9 +1,10 @@
 body{
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
     background-color: #fbfbfb;
     padding: 50px;
 }
 
-kbd{
+div{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;

@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="style.css">
 	</head>
 <body>
-	<kbd>
+	<div>
 		<?php
 			
 			echo "<a href='idade.php'>";
@@ -139,6 +139,6 @@
 				echo '</article>';
 			echo "</a>";
 		?>
-	</kbd>
+	</div>
 </body>
 </html>
