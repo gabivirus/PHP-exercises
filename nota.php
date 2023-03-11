@@ -5,16 +5,18 @@
 </head>
 <body>
 	<kbd>
-		<h2>Notas</h2>
-		<form method="post">
-			<label for="nota">Informe uma nota:</label>
-			<input type="text" name="nota">
-			<br>
+	<?php
+		$html = '
+			<h2>Notas</h2>
+			<form method="post">
+				<div id="frm" ><label for="nota">Informe uma nota:</label></div>
+				<div id="frm" ><input type="text" name="nota"></div>
+				<br>
 
-			<input type="submit" value="Analisar">
-			<br><br><br>
-
-		</form>
+				<input type="submit" value="Analisar">
+				<br><br><br>
+			</form>'
+	?>
 
 	<?php
 
@@ -22,9 +24,17 @@
 
 		$nota = intval($_POST['nota']);
 
-		if ($nota >= 0 && $nota <= 5) { echo 'Credo'; }
-		else if ($nota >= 6 && $nota <= 10) { echo 'Parabéns'; }
-		else{ echo $nota, ' é uma nota invalida, digite novamente.'; }
+		if ($nota >= 0 && $nota <= 5) 
+		{
+			echo 'Credo';
+			$hmtl = preg_replace('#<div id="frm">(.*?)</div>#', '', $html);
+		}
+		else if ($nota >= 6 && $nota <= 10) 
+		{
+			echo 'Parabéns'; 
+			$hmtl = (preg_replace('#<div id="frm">(.*?)</div>#', '', $html));
+		}
+		else{ echo "$nota, é uma nota invalida, digite novamente."; }
 		
 	}
 	?>
