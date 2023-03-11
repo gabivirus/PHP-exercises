@@ -34,11 +34,11 @@
 			if(($ang1 > $ang2 + $ang3) || ($ang2 > $ang1 + $ang3) || ($ang3 > $ang2 + $ang1))
 				{ echo 'Não foi possível formar um triângulo'; }
 
-			elseif (($ang1 == $ang2) && ($ang1 == $ang3)) {echo'Equilatero';}
+			elseif (($ang1 == $ang2) && ($ang1 == $ang3)) {echo'Equilatero:<img src="../img/escaleno.wepb"';}
 
-			elseif (($ang1 == $ang2) || ($ang1 == $ang3) || ($ang2 == $ang3)) {echo'Isósceles';}
+			elseif (($ang1 == $ang2) || ($ang1 == $ang3) || ($ang2 == $ang3)) {echo'Isósceles:<img src="../img/isoceles.webp';}
 
-			else {echo'Escaleno';}
+			else {echo'Escaleno:<img src="../img/equilatero.webp';}
 		}
 		?>
 		<button><a href="index.php">Sair</a></button>

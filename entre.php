@@ -23,12 +23,20 @@
 			<?php
 
 			if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
+				
 				echo '<h3>';
-				for( $c = $_POST['num1']+1; $c < $_POST['num2']; $c++)
-				{
-					echo $c, '&nbsp';
-					
+				if($_POST['num1'] > $_POST['num2']){
+
+					for( $c = $_POST['num1']+1; $c < $_POST['num2']; $c++){
+						echo $c, '&nbsp';
+					}
+				}
+				else{
+					for( $c = $_POST['num2']+1; $c < $_POST['num1']; $c++)
+					{
+						echo $c, '&nbsp';
+						
+					}
 				}
 				echo '</h3>';
 			}
